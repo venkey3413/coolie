@@ -1,13 +1,389 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coolie Furniture Ecommerce Application</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Resort - Luxury Beach Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Paradise Resort</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking" class="book-now-btn">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Paradise</h1>
+            <p>Experience luxury and tranquility at our beachfront resort</p>
+            <a href="#booking" class="cta-button">Book Your Stay</a>
+        </div>
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="https://player.vimeo.com/external/370467553.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6992dd6c1c&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Perfect Getaway</h2>
+            <div class="booking-form-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkin">Check-in Date</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Check-out Date</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5+">5+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="roomType">Room Type</label>
+                            <select id="roomType" name="roomType" required>
+                                <option value="">Select room type</option>
+                                <option value="ocean-view">Ocean View Suite - $299/night</option>
+                                <option value="beachfront">Beachfront Villa - $499/night</option>
+                                <option value="presidential">Presidential Suite - $799/night</option>
+                                <option value="family">Family Resort - $399/night</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="3" placeholder="Any special requests or preferences..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms-section">
+        <div class="container">
+            <h2>Luxury Accommodations</h2>
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" alt="Ocean View Suite">
+                        <div class="room-price">$299<span>/night</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Ocean View Suite</h3>
+                        <p>Spacious suite with panoramic ocean views, private balcony, and luxury amenities.</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> King Size Bed</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                            <li><i class="fas fa-swimming-pool"></i> Pool Access</li>
+                            <li><i class="fas fa-utensils"></i> Room Service</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg" alt="Beachfront Villa">
+                        <div class="room-price">$499<span>/night</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Beachfront Villa</h3>
+                        <p>Private villa with direct beach access, outdoor shower, and personal concierge service.</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-home"></i> Private Villa</li>
+                            <li><i class="fas fa-umbrella-beach"></i> Beach Access</li>
+                            <li><i class="fas fa-hot-tub"></i> Private Jacuzzi</li>
+                            <li><i class="fas fa-concierge-bell"></i> Concierge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg" alt="Presidential Suite">
+                        <div class="room-price">$799<span>/night</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Presidential Suite</h3>
+                        <p>Ultimate luxury with panoramic views, private dining area, and exclusive amenities.</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-crown"></i> Premium Suite</li>
+                            <li><i class="fas fa-glass-cheers"></i> Private Bar</li>
+                            <li><i class="fas fa-spa"></i> In-room Spa</li>
+                            <li><i class="fas fa-helicopter"></i> Helicopter Transfer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Family Resort">
+                        <div class="room-price">$399<span>/night</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Family Resort</h3>
+                        <p>Perfect for families with connecting rooms, kids' area, and family-friendly amenities.</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-users"></i> Family Friendly</li>
+                            <li><i class="fas fa-child"></i> Kids Club</li>
+                            <li><i class="fas fa-gamepad"></i> Game Room</li>
+                            <li><i class="fas fa-baby"></i> Babysitting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities-section">
+        <div class="container">
+            <h2>World-Class Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Infinity Pool</h3>
+                    <p>Stunning infinity pool overlooking the ocean with poolside service</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Luxury Spa</h3>
+                    <p>Full-service spa with massage therapy, facials, and wellness treatments</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Fine Dining</h3>
+                    <p>Multiple restaurants featuring international cuisine and local specialties</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Fitness Center</h3>
+                    <p>State-of-the-art gym with personal trainers and fitness classes</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Water Sports</h3>
+                    <p>Kayaking, snorkeling, jet skiing, and other exciting water activities</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h3>Beach Bar</h3>
+                    <p>Tropical cocktails and refreshments served right on the beach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Resort Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="Resort View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg" alt="Beach View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg" alt="Pool Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg" alt="Luxury Suite">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" alt="Ocean View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Resort Dining">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Paradise Beach Drive<br>Tropical Island, TI 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@paradiseresort.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Check-in / Check-out</h4>
+                            <p>Check-in: 3:00 PM<br>Check-out: 11:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Paradise Resort</h3>
+                    <p>Experience the ultimate luxury beach resort with world-class amenities and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rooms">Rooms</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Spa & Wellness</a></li>
+                        <li><a href="#">Fine Dining</a></li>
+                        <li><a href="#">Water Sports</a></li>
+                        <li><a href="#">Event Planning</a></li>
+                        <li><a href="#">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Paradise Resort. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-check-circle"></i>
+                <h3>Booking Confirmed!</h3>
+                <p>Thank you for your reservation. We'll send you a confirmation email shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
