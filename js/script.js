@@ -95,35 +95,26 @@ bookingForm.addEventListener('submit', function(e) {
     const roomPrice = roomPrices[bookingData.roomType] || 0;
     const total = nights * roomPrice;
     
-    // Store booking data (in a real app, this would be sent to a server)
-    const booking = {
-        ...bookingData,
-        nights: nights,
-        totalAmount: total,
-        bookingId: 'PR' + Date.now(),
-        bookingDate: new Date().toISOString()
-    };
-    
-    // Save to localStorage (for demo purposes)
-    localStorage.setItem('latestBooking', JSON.stringify(booking));
-    
-    // Show success modal
-    modal.style.display = 'block';
-    
-    // Reset form
-    this.reset();
-    
-    // Send confirmation email (simulation)
-    console.log('Booking confirmed:', booking);
-    
-    // In a real application, you would send this data to your backend
-    // fetch('/api/bookings', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(booking)
-    // });
+    // Send booking data to server
+    fetch('/api/bookings', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Booking confirmed:', data);
+        // Show success modal
+        modal.style.display = 'block';
+        // Reset form
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Booking error:', error);
+        alert('Booking failed. Please try again.');
+    });
 });
 
 // Contact form submission
@@ -135,14 +126,24 @@ contactForm.addEventListener('submit', function(e) {
     const formData = new FormData(this);
     const contactData = Object.fromEntries(formData);
     
-    // Store contact data (in a real app, this would be sent to a server)
-    console.log('Contact form submitted:', contactData);
-    
-    // Show success message
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    
-    // Reset form
-    this.reset();
+    // Send contact data to server
+    fetch('/api/contacts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Contact saved:', data);
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Contact error:', error);
+        alert('Failed to send message. Please try again.');
+    });
 });
 
 // Newsletter subscription
