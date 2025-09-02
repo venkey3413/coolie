@@ -121,6 +121,22 @@ app.get('/api/bookings', (req, res) => {
     });
 });
 
+// Get contacts
+app.get('/api/contacts', (req, res) => {
+    db.all("SELECT * FROM contacts ORDER BY created_at DESC", (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json(rows);
+    });
+});
+
+// Admin panel route
+app.get('/admin', (req, res) => {
+    res.sendFile(__dirname + '/admin.html');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
