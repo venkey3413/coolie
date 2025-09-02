@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "admin": "node admin-server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {

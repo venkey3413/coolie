@@ -132,10 +132,7 @@ app.get('/api/contacts', (req, res) => {
     });
 });
 
-// Admin panel route
-app.get('/admin', (req, res) => {
-    res.sendFile(__dirname + '/admin.html');
-});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
